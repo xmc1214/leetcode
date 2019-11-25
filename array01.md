@@ -1,6 +1,7 @@
 # leetcode 数组类 两数之和
 
-```class Solution  
+```c++
+class Solution  
 {  
 public:  
  vector<int> twoSum(vector<int>& nums, int target)  
