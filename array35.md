@@ -34,11 +34,6 @@ public:
     {
       return 0;
     }
-    if(target > nums.back())
-    {
-
-      return nums.size();
-    }
     return lower_bound(nums.begin(),nums.end(),target) - nums.begin();
   }
 };
