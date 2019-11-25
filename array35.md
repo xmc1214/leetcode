@@ -24,7 +24,7 @@ public:
 
 ## 解法二
 
-利用STL中的二分查找函数lower_bound()返回第一个大于或者等于target的迭代器,再与起始迭代器相减得到下标,target小于等于nums第一个元素以及大于最后一个元素的情况额外处理
+利用STL中的二分查找函数lower_bound()返回第一个大于或者等于target的迭代器,再与起始迭代器相减得到下标,target小于等于nums第一个元素的情况额外处理
 
 ```c++
 class Solution {
