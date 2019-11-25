@@ -41,22 +41,21 @@ class Solution
 public:
  int removeElement(vector<int>& nums, int val)
  {
-  for(vector<int>::iterator it = nums.begin(); it != nums.end();)
+  int i = 0;
+  int n = nums.size();
+  while(i < n)
   {
-   if((*it) == val)
+   if(nums[i] == val)
    {
-    it = nums.erase(it);
+    nums[i] = nums[n - 1];
+    n--;
    }
    else
    {
-    it++;
+    i++;
    }
-   if(it == nums.end())
-   {
-    break;
   }
- }
- return nums.size();
+  return n;
  }
 };
 ```
