@@ -15,7 +15,7 @@ public:
    if((*it) == val)
    {
     it = nums.erase(it);
-  }
+   }
   else
    {
     it++;
