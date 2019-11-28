@@ -25,4 +25,5 @@ public:
       return result;
     }
 };
+
 ```
