@@ -28,7 +28,6 @@ public:
   return nums.size();
  }
 };
-
 ```
 
 ## 解法二
