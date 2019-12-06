@@ -16,7 +16,7 @@ public:
        }
        int low = 0;
        int high = 0;
-       for(int i = 0,j = nums.size() - 1; i < nums.size(),j > 0; i++,j--)
+       for(int i = 0; i < nums.size(); i++)
        {
          if(nums[i] != v[i])
          {
@@ -30,6 +30,41 @@ public:
          {
            high = j;
            break;
+         }
+       }
+       return high - low + 1;
+    }
+};
+```
+
+## 解法二
+
+相对于解法一来说区别在于没有使用额外的数组空间,思想相似
+
+```c++
+class Solution {
+public:
+    int findUnsortedSubarray(vector<int>& nums) {
+       int low = 0;
+       int high = -1;
+       int size = nums.size();
+       int min = nums[size - 1];
+       int max = nums[0];
+       for(int i = 0; i < size; i++)
+       {
+         if(max > nums[i])
+         {
+           high = i;
+         }else
+         {
+           max = nums[i];
+         }
+         if(min < nums[size - i - 1])
+         {
+           low = size - i - 1;
+         }else
+         {
+           min = nums[size - i - 1];
          }
        }
        return high - low + 1;
