@@ -63,3 +63,31 @@ public:
     }
 };
 ```
+
+## 解法三
+
+使用方程法求解, sumA - x + y = sumB + x - y，所以y = x + (sumB - sumA) / 2,使用unordered_set保存数组B的元素,遍历数组A判断A[i] + delta是否存在与set集合中
+
+```c++
+class Solution {
+public:
+    vector<int> fairCandySwap(vector<int>& A, vector<int>& B) {
+        int sumA = accumulate(A.begin(),A.end(),0);
+        int sumB = accumulate(B.begin(),B.end(),0);
+        int delta = (sumB - sumA) / 2;
+        unordered_set<int> s;
+        for(auto x:B)
+        {
+          s.insert(x);
+        }
+        for(auto y:A)
+        {
+          if(s.find(y + delta) != s.end())
+          {
+            return {y,y + delta};
+          }
+        }
+        return {};
+    }
+};
+```
