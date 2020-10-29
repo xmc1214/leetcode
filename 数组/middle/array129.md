@@ -39,3 +39,34 @@ func travel(root *TreeNode,ans *[]string,temp string) *TreeNode {
     return root
 }
 ```
+
+## 解法二
+
+直接计算实时的数字和,减少内存消耗
+
+```
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func sumNumbers(root *TreeNode) int {
+    ans := 0
+    travel(root,&ans,0)
+    return ans
+}
+
+func travel(root *TreeNode,ans *int,curNum int) {
+    if root == nil {
+        return
+    }
+    if root.Left == nil && root.Right == nil {
+        *ans += curNum * 10 + root.Val
+    }
+    travel(root.Left,ans,curNum * 10 + root.Val)
+    travel(root.Right,ans,curNum * 10 + root.Val)
+}
+```
