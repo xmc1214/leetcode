@@ -4,7 +4,7 @@
 
 针对本题给定的数据集有一种hack解法
 
-```
+```go
 func findNumbers(nums []int) int {
     ans := 0
     for _,v := range nums {
@@ -20,7 +20,7 @@ func findNumbers(nums []int) int {
 
 适用于全部数据的通用解法
 
-```
+```go
 func findNumbers(nums []int) int {
     ans := 0
     for _,v := range nums {
@@ -43,7 +43,7 @@ func findNumbers(nums []int) int {
 
 将元素转化为字符串直接判断长度是否为偶数
 
-```
+```go
 func findNumbers(nums []int) int {
     count := 0
 
