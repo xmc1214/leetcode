@@ -14,3 +14,37 @@ func createTargetArray(nums []int, index []int) []int {
     return ans
 }
 ```
+
+## 解法二
+
+```go
+package main
+
+func createTargetArray(nums []int, index []int) []int {
+	var res = make([]int, len(nums))
+	for k, i := range index {
+		copy(res[i+1:], res[i:])
+		res[i] = nums[k]
+	}
+	return res
+}`
+```
+
+## 解法三
+
+手动移动元素
+
+```go
+package main
+
+func createTargetArray(nums []int, index []int) []int {
+	var res = make([]int, len(nums))
+	for i,v := range index {
+        for t := len(res) - 1; t > v; t-- {
+            res[t] = res[t - 1]
+        }
+        res[v] = nums[i]
+	}
+	return res
+}
+```
