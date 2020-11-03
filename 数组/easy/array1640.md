@@ -24,3 +24,4 @@ func canFormArray(arr []int, pieces [][]int) bool {
     return true
 }
 ```
+## 解法二
